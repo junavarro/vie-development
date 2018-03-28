@@ -1,0 +1,1290 @@
+/*
+Theme Name: _tk
+Theme URI: http://themekraft.com/store/_tk-free-wordpress-starter-theme-based-on-twitter-bootstrap/
+Author: ThemeKraft
+Author URI: http://themekraft.com/
+Description: Hi, I am the ultra minimal starter theme _tk, ready for your next awesome WordPress project! I am the most seamless and minimalistic integration of Twitter Bootstrap Framework into the _s starter theme from Automattic, the guys behind WordPress. You can find me on GitHub. Fork me! I'm waiting for you ;)
+Version: 1.1.10
+License: GNU General Public License v3.0 /
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Tags: gray, light, two-columns, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, flexible-header, sticky-post,  theme-options, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+This theme is the most seamless and minimalistic integration of Twitter Bootstrap Framework into
+the _s starter theme from Automattic, the guys behind WordPress.
+
+_s (or Underscores) http://underscores.me/, (C) 2012-2013 Automattic, Inc. Twitter Bootstrap
+
+Credits:
+
+1. Bootstrap
+
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+
+ * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=f58353a31151a8c05d7c)
+ * Config saved to config.json and https://gist.github.com/f58353a31151a8c05d7c
+
+2. wp_bootstrap_navwalker
+
+* Class Name: wp_bootstrap_navwalker
+* GitHub URI: https://github.com/twittem/wp-bootstrap-navwalker
+
+3. Glyphicons
+
+ * http://getbootstrap.com/components/
+
+*/
+
+/* My Minimal WordPress Styling comes here */
+
+/* This is a small security for too long strings titles */
+body {
+	word-wrap: break-word;
+}
+
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+
+
+/* Images and wp-captions should always fit and be responsive */
+img {
+	display: inline-block;
+	height: auto;
+	max-width: 100%;
+}
+img[class*="wp-image-"] {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.wp-caption {
+	border: 1px solid #ccc;
+	margin-bottom: 10px;
+	max-width: 100%;
+	border-radius: 4px;
+	padding: 0 10px;
+}
+.wp-caption.aligncenter {
+	margin-bottom: 10px;
+}
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+}
+.wp-caption .wp-caption-text {
+	text-align: center;
+	margin-top: 10px;
+}
+
+/* WP Gallery */
+.gallery {
+	margin-bottom: 1.5em;
+}
+.gallery a img {
+	border: none;
+	height: auto;
+	max-width: 90%;
+}
+.gallery dd {
+	margin: 0;
+}
+.gallery-caption {
+	display: block;
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+
+/* Text meant only for screen readers */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+
+
+/* Content */
+.main-content-inner {
+	padding-bottom: 1.5em;
+}
+.hentry {
+	margin: 0 0 1.5em;
+}
+.sticky {
+	display: block;
+}
+.bypostauthor {
+	display: block;
+}
+
+
+/* Clearing */
+.clear {
+	clear: both;
+}
+
+/* Navigation */
+
+.dropdown-submenu{position:relative;}
+.dropdown-submenu>.dropdown-menu{top:0;left:100%;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
+.dropdown-submenu:active>.dropdown-menu, .dropdown-submenu:hover>.dropdown-menu {
+display: block;
+}
+.dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
+.dropdown-submenu:active>a:after{border-left-color:#ffffff;}
+.dropdown-submenu.pull-left{float:none;}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
+
+
+/* Here some needed widget styles
+ * Most widgets are adapted in the file bootstrap-wp.js - and REALLY easy to modify! ;) */
+.widget { margin-bottom: 2em; }
+.widget_nav_menu ul.sub-menu li, .widget_pages ul.children li { padding-left: 15px; }
+
+/* Hiding the search widget's button in widgets. thats just too old-skool. :) but if you want it back, just delete the next line.
+ * Note: you can change the whole appearance of the search_form() function in our searchform.php */
+.widget_search .search-form input[type="submit"] { display: none; }
+
+/* Make sure select elements fit in widgets */
+.widget select {
+	max-width: 100%;
+}
+
+/* Nested comments? They are threaded and nested already, you just need to add your own styling to finalize!
+ * For example with some margin, like the line below ;) Delete, modify, change classes in HTML if you desire another style */
+ .comment .children { margin-left: 1.5em; }
+
+/**
+* Some WP Theme Repository requirements
+*/
+
+.sticky {
+}
+
+.gallery-caption {
+
+}
+
+.bypostauthor {
+
+}
+
+.entry-meta {
+	clear: both;
+}
+
+/*
+ == Quick CSS styling tips ==
+
+ You can start off in a rough direction with some minimal styles.
+ See below for some tips. ;)
+
+
+ == Want to have the whole site wrapped? ==
+
+ Just fill the .container class with some background color to have a the whole site "wrapped".
+ This works so easy because every main part is wrapped only once into a container class by bootstrap.
+ Try out by decommenting the next line and go from there.
+
+ .container { background: #f9f9f9; border-right: 1px solid #eee; border-left: 1px solid #eee; }
+
+
+ == Want to wrap just the content and sidebar in Bootstrap style? ==
+
+ That one is a great example to show that some things are much cleaner and easier to do via just adding some HTML classes.
+ In this case, we will add just one CSS class "panel", look for example at the beginning in content.php!
+
+
+ == Infinite Scrolling by Jetpack ==
+ You can enable this cool feature by simply decommenting the lines below and make sure you use the same classes on the right place in your html..
+
+/* Globally hidden elements when Infinite Scroll is supported and in use.
+ * Older / Newer Posts Navigation (the pagination, must always be hidden), Theme Footer only when set to scrolling.. */
+
+/*
+.infinite-scroll .page-links,
+.infinite-scroll.neverending .site-footer {
+	display: none;
+}
+*/
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
+
+/*
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+*/
+
+/* Hey, if you don't need my comments anymore, just delete me! :)  */
+
+
+/* styles for _tk_pagination und _tk_link_pages */
+nav form.tk-page-nav,
+nav .input-group,
+nav .input-group-btn,
+nav .form-control {
+    display: inline;
+}
+
+/*
+Puedes añadir tu propio CSS aquí.
+
+Haz clic en el icono de ayuda de arriba para averiguar más.
+*/
+
+body, html {
+	overflow-x: hidden;
+}
+
+#masthead {
+	background: #8D2B3E;
+	z-index: 1;
+	position: relative;
+}
+
+#masthead .site-header-inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 60px;
+}
+
+.navbar {
+	align-self: flex-end;
+	background: none;
+	border: none;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover, .navbar.navbar-default li.current-menu-parent a {
+	background: transparent;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.navbar.navbar.navbar-default a {
+	color: #FFF;
+}
+
+.navbar.navbar.navbar-default a:hover {
+	color: #FFF;
+}
+
+.main-menu {
+	margin-right: auto;
+	text-transform: uppercase;
+}
+
+.secondary-menu {
+	text-transform: uppercase;
+}
+
+.menu-item.dropdown ul {
+	background: #8D2B3E;
+	border: 0;
+	margin-top: 4px;
+}
+
+.menu-item.dropdown.open a, .menu-item.dropdown.open a.dropdown-toggle {
+	background: #8D2B3E;
+	color: #FFF;
+}
+
+.menu-item.dropdown.open a:hover {
+	background: #8D2B3E;
+}
+
+
+#slogan p {
+	background: rgba(141, 43, 62, 0.85);
+	display: block;
+	color: #FFF;
+	font-size: 1.5em;
+	padding: 5px 25px;
+	margin: 0;
+	text-align: center;
+}
+#slogan br {
+	display: none;
+}
+@media (min-width: 768px) {
+	#slogan {
+		margin-top: -250px;
+		margin-left: 10%;
+		position: relative;
+	}
+
+	#slogan p {
+		display: inline;
+		font-size: 5em;
+		padding: 11px 25px;
+		text-align: left;
+	}
+	#slogan br {
+		display: block;
+	}
+	#slogan p:nth-of-type(2) {
+		margin-left: 130px
+	}
+	#slogan p:nth-of-type(3) {
+		margin-left: 55px
+	}
+
+}
+/*
+.intro-wrapper {
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-image: url('/wp-content/uploads/2017/05/Business-Planning-Docs-articles-1024x4211.jpeg');
+	transform: rotate(3deg);
+	width:110%;
+	overflow: hidden;
+	height: 600px;
+	margin-top: -75px;
+	margin-left: -75px;
+	margin-bottom: 65px;
+	z-index: -1;
+}*/
+
+.main-container {
+	display: block;
+	margin: 0 auto;
+	max-width: 1550px;
+}
+
+.page-title {
+	color: #999;
+}
+
+.entry-content > p {
+	color: #CCC;
+	line-height: 1.75em;
+}
+
+.cards {
+	display: flex;
+	align-items: center;
+	overflow-y: auto;
+	width: 100%;
+}
+.cards a.more {
+	border: 2px solid #8D2B3E;
+	padding: 20px 40px;
+	color: #8D2B3E;
+	font-size: 1.75em;
+}
+
+.cards .card {
+	border: 1px solid #CCC;
+	flex-shrink: 0;
+	max-width: 350px;
+	margin: 0 10% 0 0;
+	width: 80%;
+	display: block;
+}
+.cards .card img {
+	max-height: 300px;
+	width: 100%;
+}
+.cards .card header {
+	background: #404041;
+	padding: 20px;
+}
+.cards .card h1 {
+	font-size: 1.25em;
+	margin: 10px 0;
+	color: #FFF;
+}
+.cards .card h2 {
+	margin: 0;
+	color: #FFF;
+}
+p.header-vie-news {
+	color: red;
+}
+@media (min-width: 768px) {
+	.cards .card {
+
+
+	}
+}
+
+@media (min-width: 1000px) {
+	.cards .card {
+		margin-right: 100px;
+		width: 100%;
+	}
+}
+
+#logo {
+	width: 90px;
+}
+.navbar {
+	margin-bottom: 4px;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+	background: transparent;
+}
+li.search-menu.full-width-menu form, li.search-menu.sliding form {
+	background: #8D2B3E;
+	margin-top: 4px;
+}
+li.search-menu.full-width-menu form, li.search-menu.sliding form input {
+	color: #999;
+}
+li.search-menu.full-width-menu form, li.search-menu.sliding form input[type="search"] {
+	border-radius: 5px;
+	border: 1px solid #CCC;
+}
+.emodal-overlay {
+	background: rgba(255,255,255,0.5) !important;
+}
+.emodal.nano {
+	color: #FFF!important;
+	background: #404041!important;
+}
+.image-top-background {
+	overflow: hidden;
+}
+
+.image-top-background {
+    position: absolute;
+    z-index: -1;
+    width: 120%;
+    height: 450px;
+    -ms-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+    top: -10%;  
+}
+.image-top-background img {
+	transform: rotate(-5deg);
+	width: 100%;
+}
+.research-area-content {
+	margin-top: 41%;
+	margin-left: 10%;
+}
+/* /wp-content/uploads/2017/06/nature-1.png */
+
+@media only screen and (min-width: 1000px ){
+	.research-area-content {
+		margin-top: 300px;
+	}
+}
+
+
+.margin-l-10{
+	margin-left: 10%;
+}
+.container{
+	padding: 0;
+  	margin: 0;
+  	width: 100%;
+}
+.content{
+	width:100%;
+}
+#content{
+  width:100%;
+}
+.new-background-biological{
+	background: url("http://localhost/wp-content/uploads/2017/08/intro.jpg");
+  	background-size:cover; 
+}
+.new-background-biotecnology{
+	background: url("http://localhost/wp-content/uploads/2017/08/intro2.jpg");
+  	background-size:cover; 
+}
+.new-background-environmental{
+	background: url("http://localhost/wp-content/uploads/2017/08/image10.png");
+  	background-size:cover; 
+}
+.new-background-project{
+  	background: url("http://localhost/wp-content/uploads/2017/06/image3047.png");
+  	background-size:cover; 
+}
+.filter-background{
+	/*background: url("/wp-content/uploads/2017/08/filter.svg");
+  	background-size:cover; */
+}
+.biological-home {
+	background: url("http://localhost/wp-content/uploads/2017/08/test-back.png");
+
+}
+/* Enter Your Custom CSS Here */
+/*
+Puedes añadir tu propio CSS aquí.
+
+Haz clic en el icono de ayuda de arriba para averiguar más.
+*/
+/*
+div.entry-meta{
+	display: none !important;
+}
+*/
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+.entry-content.col-sm-12.col-md-8{
+    width:100%;
+  	font-family: 'Lato' !important;
+  	color: #958b8b !important;
+}
+.entry-content > p{
+  color: #958b8b !important;
+}
+body{
+	/*font-family: 'Lato', sans-serif;*/
+  font-family: 'Roboto', sans-serif;
+}
+
+/*To hie entry meta*/
+.entry-meta{
+	display: none;
+}
+#masthead {
+	opacity: 0.8;
+}
+a img {
+	padding: 3% 0 3% 0;
+}
+a img.news-item-img {
+	padding: 0%;
+}
+/* unvisited link */
+
+
+/* visited link */
+
+.news-title{
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+p.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* mouse over link */
+a:hover {
+	text-decoration: none;
+    color: white;
+	text-overflow: ellipsis;
+}
+a.homelink:hover {
+  color: black;
+}
+
+a.backlink:hover {
+  color: black;
+}
+/* selected link */
+
+a:active {
+    color: white;
+}
+.news-arrow-back{
+	margin-top: 10%;
+}
+.card-event{
+	margin: 3%;
+    position: relative;
+    left: 19%;
+}
+div.news-article-template{
+	height: 700px;
+	width: 700px;
+}
+div.content-news-item-view{
+	background: #404041;
+	padding: 1%;
+    position: relative;
+    top: -51%;
+    right: -47%;
+    width: 450px;
+	opacity: 0.9;
+	color: white;
+}
+div.content-event-item-view {
+  background: #404041;
+  padding: 1%;
+  position: ABSOLUTE;
+  top: 28%;
+  right: 45%;
+  width: 450px;
+  opacity: 0.9;
+  color: white;
+}
+div.event-image-main-template{
+	width: 400px;
+  	height: 400px;
+}
+div.content-news-item{
+	background: #404041;
+	height: 130px;
+	text-overflow: ellipsis;
+	overflow-y: hidden;
+  	padding: 6% 6% 0 6%;
+}
+div.content-news-item-header{
+    height: 33%;
+    text-overflow: ellipsis;
+    overflow-y: hidden;
+	padding: 0% 2% 0% 2%;
+	margin-bottom: 2%;
+}
+div.content-news-item-description{
+	padding: 2%;
+    height: 77%;
+    text-overflow: ellipsis;
+    overflow-y: hidden;
+	color: #FFFFFF;
+}
+/* General TEXT styles*/
+.vie-paragraph{
+	color:#75797e;
+  	font-size: 16px;
+  	font-family: 'Lato', sans-serif !important;
+  	line-height: 200%;
+  	font-weight: 300;
+}
+.vie-title-simple{
+	font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    color: #5E5F5F;
+    margin-bottom: 3%;
+}
+/* General Containers */
+.vie-cards{
+    display: flex;
+    align-items: center;
+  	justify-content: space-between;
+}
+.vie-card{
+	max-width: 250px;
+  	margin: 1% 0% 1% 0%;  
+}
+.vie-card-container{
+	background: #404041;
+  	color: white;
+}
+.vie-card-content{
+	padding: 6% 2% 2% 9%;			
+}
+.vie-block-event-number{
+	font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+.vie-block-event-title{
+  	font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: white;
+}
+.vie-block-event-detail{
+	font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: white;
+}
+.more{
+	font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 23px;
+    color: #B02330 !important;
+    border-style: solid;
+    width: 206px;
+    height: 66px;
+    align-items: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+}
+/* General Expand
+  */
+.vie-expand-header{
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #5E5F5F;
+  padding: 0 0 0 2%;
+}
+.vie-expand-content{
+	background: #EEF0F0;	
+}
+.vie-expand-content-title{
+	font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #5F5F5F;
+}
+.vie-expand-content-description{
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    color: #5F5F5F;
+    line-height: 200%;
+}
+.exp-col-content-holder {
+    margin: 15px 0px 0px 0 !important;
+}
+/* To hide the  current page title and  put tu customize*/
+
+/* Navigation menu */
+.dropdown-toggle{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #E6E6E6;
+}
+.dropdown-menu{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #E6E6E6;
+}
+/*.menu-item-object-page{
+	margin-top: 3%;
+    margin-bottom: 3%;
+}*/
+
+.page-title{
+ display: none;
+}
+#secondary-menu{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  color: #E6E6E6;
+}
+
+/*Black Box Lateral menu*/
+ul.vie-lateral-menu-list{
+	list-style-type: circle;
+  	color: #B0B2B4;
+}
+a.vie-lateral-menu-item:hover{
+  color: #B0B2B4;
+}
+a.vie-lateral-menu-item:active{
+  color: #B0B2B4;
+}
+a.vie-lateral-menu-item{
+   color: #B0B2B4;
+}
+a.vie-lateral-menu-item-selected:link{
+   color: #4690A0;
+}
+a.vie-lateral-menu-item-selected:hover{
+  color: #B0B2B4;
+}
+.vie-lateral-menu{
+	/*background: rgba(0,0,0,0.7);*/
+  	width: 20%;
+  	padding: 0 1% 0 1%;
+}
+.vie-lateral-menu-list{
+	padding: 0% 5% 15% 5%;
+}
+.vie-lateral-menu-item-container{
+	margin: 4% 0 4% 0px;
+}
+.vie-lateral-menu-item{
+	margin: 8% 0 2% 0;
+  	font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+.vie-lateral-menu-item-selected{
+	margin: 8% 0 2% 0;
+  	font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+/*
+	HOME -Page Styles STARTS
+*/
+#wds_container1_0{
+	position: relative;
+    top:  -5%;
+}
+#slogan{
+	margin-top: -250px;
+}
+.vie-home-page{
+    padding: 1% 10% 1% 10%;
+}
+.vie-home-content{
+    padding: 5%;
+}
+.home-blocks{
+    padding-left: 5%;
+}
+.home-event-block{
+    padding: 4% 0 4% 0;
+    margin: 1% 0 1% 0;
+
+}
+.home-news-block{
+    padding: 4% 0 4% 0;
+    margin: 1% 0 1% 0;
+}
+
+/*
+	HOME -Page Styles ENDS
+*/
+
+
+/*Pages  Research Area Over View*/
+
+
+.BIOTECNOLOGY-TECHNOLOGY{
+    background: url("http://localhost/wp-content/uploads/2017/06/intro.jpg")  center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+.BIOLOGICAL-HEALTH-SCIENCES{
+    background: url("http://localhost/wp-content/uploads/2017/06/blood.jpg") center center fixed;
+    background-size: auto auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+.EVIRONMENTAL-RESEARCH{
+    background: url("http://localhost/wp-content/uploads/2017/06/nature-1.png") center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+.research-area{
+    margin-top: 7%;
+  	margin-left: 10%;
+}
+
+.research-area-header{
+	color: #404041;	
+}
+.research-area-description{
+	display: flex;
+	padding-left: 8%;
+}
+.research-area-side-menu{
+	
+    width: 20%;
+	padding: 1%;
+    height: 209px;
+    margin-right: 1%;
+}
+.research-area-menu-links{
+    width: 200px;
+}
+.research-area-text{
+	border-width: 1px;
+	border-left-style: solid;
+    border-color: #9C9C9C;
+	padding-left: 3%;
+	width: 50%;
+}
+/*Projects articles view*/
+@media only screen and (max-height: 800px ){
+  .project-image-top-background{
+    position: absolute;
+    z-index: -1;
+    width: 400%;
+    height: 450px;
+    -ms-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+    top: -36%;
+    right: -95%;
+	}
+}
+@media only screen and (min-height: 800px ){
+  .project-image-top-background{
+    position: absolute;
+    z-index: -1;
+    width: 600%;
+    height: 450px;
+    -ms-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+    top: -41%;
+    right: -113%;
+	}
+}
+.image-background {
+	background-image: url(http://localhost/wp-content/uploads/2017/06/image3047.png);
+}
+.project-area-header{
+	color: #404041;	
+}
+.project-area-content{
+  	
+	margin-top: 2%;
+    margin-left: 10%;
+    padding-top: 0.5%;
+}
+.project-area-description{
+	display: flex;
+	/*margin-top: 27%;*/
+}
+.project-area-side-menu{
+	border-right-style: groove;
+    width: 20%;
+	padding: 1%;
+    height: 100%;
+    margin-right: 3%;
+
+}
+/*Projects articles view ends*/
+/*Partners articles view*/
+@media only screen and (max-height: 800px ){
+  .partner-image-top-background{
+    position: absolute;
+    z-index: -1;
+    width: 400%;
+    height: 450px;
+    -ms-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+    top: -36%;
+    right: -95%;
+	}
+}
+@media only screen and (min-height: 800px ){
+  .partner-image-top-background{
+    position: absolute;
+    z-index: -1;
+    width: 600%;
+    height: 450px;
+    -ms-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+    top: -76%;
+    right: -118%;
+	}
+}
+.image-background {
+	background-image: url(http://localhost/wp-content/uploads/2017/06/image3047.png);
+}
+.partner-area-header{
+	color: #404041;	
+}
+.partner-area-content{
+  	
+	margin-top: 2%;
+    margin-left: 10%;
+    padding-top: 0.5%;
+}
+.partner-area-description{
+	display: flex;
+	margin-top: 34%;
+}
+.partner-area-side-menu{
+	border-right-style: groove;
+    width: 20%;
+	padding: 1%;
+    height: 100%;
+    margin-right: 3%;
+
+}
+/*Partners ends */
+
+/* Article Gallery */
+.gallery-header{
+	padding-left: 9%;
+}
+.gallery-category{
+	font-weight: 400;
+    font-family: 'Lato';
+    color: #939398;
+}
+.gallery-project-title{
+    color: #525254;
+}
+.gallery-container{
+	display: flex;
+  	flex-direction: column;
+  	width: 100%;
+}
+.gallery-items{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+}
+.gallery-article{
+
+  width: 300px;
+  height: 300px;
+  display: flex;
+   align-items: flex-end;
+  margin: 20px;
+  background-size: cover;
+}
+.item-article{
+  background-color: rgba(0,0,0,0.7);
+  width: 100%;
+  height: 100%;
+  padding: 1% 1% 2% 2%;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+}
+.devider-article{
+  height: 5px;
+  width: 90px;
+  background: white;
+}
+.vie-simple-gallery-content{
+	display: flex;
+}
+/* Article Gallery  ENDS*/
+/* Footer */
+.vie-footer{
+  /*position: absolute;*/
+  bottom: 0;
+  margin-top: 20%;
+  background: #404041;
+  width: 100%;
+  display: flex;
+  align-items: center;
+ 
+}
+.vie-footer-contact {
+  margin-top: 20px;
+  height: 100%;
+  color: white;
+  width: 23%;
+  margin-top: 1%;
+  margin-left: 3%;
+}
+.vie-footer-devider{
+  height: 140px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-right-style: solid;
+  border-right-color: white;
+}
+.vie-footer-content {
+  height: 100%;
+  margin: 1%;
+  color: white;
+  width: 68%;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+/* Gallery Opportunity**/
+
+.opportunity-title{
+	margin-left: 17%;
+}
+.vie-expand-content{
+  padding: 2%;
+}
+.vie-opportunity{
+	background: #E0E0E0;
+    border-bottom: solid;
+    border-bottom-color: #9c9c9c;	
+  	
+}
+.vie-opportunity-container{
+    display: flex;
+  	align-items: flex-start;
+}
+.container-opportunity{
+	display: flex;
+    flex-direction: column;
+  	margin-left: 9% !important;
+	background: #E0E0E0;
+}
+
+/* Gallery Event */
+.gallery_colum{
+  width: 420px;
+  height: 210px;
+  background: red;
+  display: flex;
+  margin: 2%;
+}
+.gallery-colum-image{
+  background: blue;
+  width:50%;
+  height: 100%;
+}
+.gallery-colum-content{
+  padding: 1% 5%;
+  background: #404041;
+  width:50%;
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 500;
+  font-size: 14px;
+  color: #E4E4E3;
+  overflow-y : hidden;
+}
+.gallery-colum-item{
+      padding-top: 6%;
+  	  padding-top: 6%;
+      display: -webkit-box;
+      max-width: 400px;
+      margin: 0 auto;
+      font-size: 16px;
+      line-height: 1.4;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+}
+.search-menu a {
+  height: 50px;
+}
+.gallery-alignment{
+	margin-top: 14%;
+}
+
+/*Funding special styles*/
+.gallery-funding-title{
+	margin-left: 10%;
+  	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	font-size: 24px;
+	color: #818181;
+}
+.gallery-funding-subtitle{
+	margin-left: 10%;
+  	font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: #818181;
+}
+/*Funding Template*/
+.funding-template-devider{
+	width: 2px;
+  	background: #808081;
+}
+.funding-template{
+  display:flex;
+  margin: 5%;
+ 
+}
+.funding-template-side-info{
+	width:35%;
+  padding-right: 2%;
+}
+.vie-red-text{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #808081; 
+}
+a.vie-red-text:hover{
+	color: #B02330; 
+}
+
+.funding-template-contact-info-header{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #B0B2B8;
+}
+.funding-template-contact-info-detail{
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #404041;
+}
+.funding-template-main-info{
+	
+  	padding-left: 8%;
+  	border-left: 1px solid #909091;
+  
+}
+.funding-template-main-info-content{
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #404041;  
+}
+.funding-template-main-info-subtitle{
+	padding: 0;
+    margin: 0;
+  	
+}
+
+/*Events Page*/
+.news-article-content > div:nth-child(1){
+	margin-bottom: 30%;
+}
+.events-page{
+    margin: 5%;
+  	display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+.gallery-events-container{
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  	justify-content: center;
+}
+.gallery-events-title{
+	margin-left: 0.5%;
+    font-weight: 500;
+    line-height: 1.1;
+    font-family: 'Roboto', sans-serif;
+}
+.content-centered{
+	display:flex;
+  	justify-content: center;
+}
+
+
